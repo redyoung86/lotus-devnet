@@ -33,11 +33,11 @@ func TestMain(m *testing.M) {
 }
 
 func TestStore(t *testing.T) {
-	numMiners := []int{2}
+	numMiners := []int{1}
 
 	for _, nm := range numMiners {
 		for i := 0; i < 1; i++ {
-			t.Run(fmt.Sprintf("%d miners, deal with miner %d", nm, i), dealSpecificMiner(t, nm, 1))
+			t.Run(fmt.Sprintf("%d miners, deal with miner %d", nm, i), dealSpecificMiner(t, nm, 0))
 		}
 	}
 }
@@ -76,7 +76,7 @@ func dealSpecificMiner(t *testing.T, numMiners int, concreteMiner int) func(*tes
 		require.Nil(t, err)
 
 		r := rand.New(rand.NewSource(22))
-		for i := 0; i < 3; i++ {
+		for i := 0; i < 1; i++ {
 			data := make([]byte, 1600)
 			r.Read(data)
 			err = ioutil.WriteFile(tmpf.Name(), data, 0644)
@@ -98,7 +98,7 @@ func dealSpecificMiner(t *testing.T, numMiners int, concreteMiner int) func(*tes
 			deal, err := client.ClientStartDeal(ctx, sdp)
 			require.Nil(t, err)
 
-			time.Sleep(time.Second)
+			time.Sleep(time.Second / 2)
 
 		loop:
 			for {
@@ -119,7 +119,7 @@ func dealSpecificMiner(t *testing.T, numMiners int, concreteMiner int) func(*tes
 				fmt.Println(storagemarket.DealStates[di.State])
 				time.Sleep(time.Second)
 			}
-
+			panic("DONE")
 			offers, err := client.ClientFindData(ctx, fcid.Root, nil)
 			require.Nil(t, err)
 			require.Greater(t, len(offers), 0)
@@ -133,11 +133,8 @@ func dealSpecificMiner(t *testing.T, numMiners int, concreteMiner int) func(*tes
 				Path:  filepath.Join(rpath, "ret"),
 				IsCAR: false,
 			}
-			updates, err := client.ClientRetrieve(ctx, offers[0].Order(waddr), ref)
+			err = client.ClientRetrieve(ctx, offers[0].Order(waddr), ref)
 			require.Nil(t, err)
-			for range updates {
-				require.NoError(t, err)
-			}
 
 			rdata, err := ioutil.ReadFile(filepath.Join(rpath, "ret"))
 			require.Nil(t, err)
