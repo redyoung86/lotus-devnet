@@ -741,8 +741,8 @@ github.com/jonboulle/clockwork v0.1.0/go.mod h1:Ii8DK3G1RaLaWxj9trq07+26W01tbo22
 github.com/jonboulle/clockwork v0.1.1-0.20190114141812-62fb9bc030d1 h1:qBCV/RLV02TSfQa7tFmxTihnG+u+7JXByOkhlkR5rmQ=
 github.com/jonboulle/clockwork v0.1.1-0.20190114141812-62fb9bc030d1/go.mod h1:Ii8DK3G1RaLaWxj9trq07+26W01tbo22gdxWY5EU2bo=
 github.com/jrick/logrotate v1.0.0/go.mod h1:LNinyqDIJnpAur+b8yyulnQw/wDuN1+BYKlTRt3OuAQ=
-github.com/jsign/lotus v0.4.1-0.20200820003035-5c6b99c9dc7d h1:U6vNyICiu2nnnbDhLaoF3YU7c3SefjULmEuX9hr3yWk=
-github.com/jsign/lotus v0.4.1-0.20200820003035-5c6b99c9dc7d/go.mod h1:TKqF8UNdYc/YPizIMgIsu161xoaYTeGSY1KANLUX4Es=
+github.com/jsign/lotus v0.4.1-0.20200821230131-4d7150617640 h1:ygx/+VR8IieNHAHL8d0Xd5M3xaLZ/HqWNjHZ//u0gGs=
+github.com/jsign/lotus v0.4.1-0.20200821230131-4d7150617640/go.mod h1:TKqF8UNdYc/YPizIMgIsu161xoaYTeGSY1KANLUX4Es=
 github.com/jsimonetti/rtnetlink v0.0.0-20190606172950-9527aa82566a/go.mod h1:Oz+70psSo5OFh8DBl0Zv2ACw7Esh6pPUphlvZG9x7uw=
 github.com/jsimonetti/rtnetlink v0.0.0-20190830100107-3784a6c7c552/go.mod h1:Oz+70psSo5OFh8DBl0Zv2ACw7Esh6pPUphlvZG9x7uw=
 github.com/jsimonetti/rtnetlink v0.0.0-20200117123717-f846d4f6c1f4/go.mod h1:WGuG/smIU4J/54PblvSbh+xvCZmpJnFgr3ds6Z55XMQ=
